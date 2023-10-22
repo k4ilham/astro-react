@@ -1,0 +1,21 @@
+---
+//import transitions effect
+import { ViewTransitions } from "astro:transitions";
+
+//import layout
+import MainLayout from "../../../layouts/MainLayout.astro";
+
+//import from create post
+import PostCreate from "../../../components/PostCreate.jsx";
+---
+
+<MainLayout>
+  <ViewTransitions />
+  <div class="container mb-5" style="margin-top: 5rem;">
+    <div class="row">
+      <div class="col-md-12">
+        <PostCreate client:load />
+      </div>
+    </div>
+  </div>
+</MainLayout>

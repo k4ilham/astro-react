@@ -1,0 +1,30 @@
+---
+//import transitions effect
+import { ViewTransitions } from "astro:transitions";
+
+//import layout
+import MainLayout from "../../layouts/MainLayout.astro";
+
+//import list posts React component
+import PostsIndex from "../../components/PostsIndex.jsx";
+---
+
+<MainLayout>
+  <ViewTransitions />
+  <div class="container mb-5" style="margin-top: 5rem;">
+    <div class="row">
+      <div class="col-md-12">
+        <a
+          href="/posts/create"
+          class="btn btn-md btn-success rounded shadow-sm border-0 mb-3"
+          >ADD NEW POST</a
+        >
+        <div class="card border-0 rounded shadow-sm">
+          <div class="card-body">
+            <PostsIndex client:visible />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>
